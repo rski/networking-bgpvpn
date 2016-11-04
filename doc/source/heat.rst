@@ -5,16 +5,8 @@ Heat
 Installation and Configuration
 ==============================
 
-Devstack will automatically configure heat to support BGPVPN.
-
-Other deployments need to add the directory for the python networking_bgpvpn_heat module
-to ``plugin_dirs`` in the heat config: ``/etc/heat/heat.conf``.
-
-This directory can be found out with:
-
-    .. code-block:: shell
-
-       dirname $(python -c "import networking_bgpvpn_heat as n;print(n.__file__)")
+The python package will automatically configure heat to support the BGPVPN
+resource types.
 
 Examples
 ========

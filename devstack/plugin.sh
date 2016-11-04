@@ -36,10 +36,6 @@ elif [[ "$1" == "stack" && "$2" == "post-config" ]]; then
         plugin_agent_add_l2_agent_extension bagpipe_bgpvpn
         configure_l2_agent
     fi
-    if is_service_enabled h-eng;then
-        echo_summary "Enabling bgpvpn in $HEAT_CONF"
-        iniset $HEAT_CONF DEFAULT plugin_dirs $NETWORKING_BGPVPN_DIR/networking_bgpvpn_heat
-    fi
     if is_service_enabled horizon; then
         cp $BGPVPN_DASHBOARD_ENABLE $HORIZON_DIR/openstack_dashboard/local/enabled/
     fi
